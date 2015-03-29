@@ -17,7 +17,7 @@ module.exports = {
                     message: 'Error getting User.'
                 });
             }
-            return res.json(Users);
+            return res.render('users/index', { title: 'User222', users: Users });
         });
     },
 
@@ -45,7 +45,10 @@ module.exports = {
      * UserController.create()
      */
     create: function(req, res) {
-        var User = new model({			first_name : req.body.first_name,			last_name : req.body.last_name,			age : req.body.age
+        var User = new model({
+			first_name : req.body.first_name,
+			last_name : req.body.last_name,
+			age : req.body.age
         });
 
         User.save(function(err, User){
@@ -80,7 +83,10 @@ module.exports = {
                 });
             }
 
-            User.first_name =  req.body.first_name ? req.body.first_name : User.first_name;			User.last_name =  req.body.last_name ? req.body.last_name : User.last_name;			User.age =  req.body.age ? req.body.age : User.age;			
+            User.first_name =  req.body.first_name ? req.body.first_name : User.first_name;
+			User.last_name =  req.body.last_name ? req.body.last_name : User.last_name;
+			User.age =  req.body.age ? req.body.age : User.age;
+			
             User.save(function(err, User){
                 if(err) {
                     return res.json(500, {

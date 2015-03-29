@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Firts name</td>
+      <td>Last name name</td>
+      <td>Age</td>
+      <td>Action</td>            
+    </tr>
+  </thead>
+  <tbody> 
+    <% users.forEach(function(user){ %>
+    <tr>
+      <td><%= user._id%></td>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.age %></td>
+      <td></td>
+    </tr>
+    <% }) %>
+
+  </tbody>
+</table>
+  
